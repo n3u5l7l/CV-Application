@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import Info from "./components/Info";
-import "./styles/app.css";
+import Experience from "./components/Experience";
 class App extends Component{
   constructor(){
     super();
@@ -10,6 +10,7 @@ class App extends Component{
     return (
     <div className="App">
       <Info />
+      <Experience />
     </div>
     );
   }
