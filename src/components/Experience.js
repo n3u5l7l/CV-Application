@@ -3,6 +3,10 @@ import {ReactComponent as ExperienceLogo} from "../assets/briefcase-outline.svg"
 class Experience extends React.Component{
     constructor(){
         super();
+
+        this.state = {
+
+        }
     }
 
     render(){
@@ -13,6 +17,7 @@ class Experience extends React.Component{
                     <ExperienceLogo alt="experience" width="35" height="35"/>
                     <h3>Experience</h3>
                 </div>
+                <button>+ Work Experience</button>
             </div>
         )
     }

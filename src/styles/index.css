@@ -8,10 +8,27 @@ body{
     height:1px;
 }
 #root{
-    padding-left: 150px; padding-right:150px;
-    padding-top: 15px;
+    padding: 15px 350px 0px 350px;
 }
 .App{
+    min-width: max-content;
+    display:flex;
+    flex-direction: column;
+    gap:15px;
+}
+
+.title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    padding:0;
+    margin:0;
+}
+
+.AppContent{
     border:1px solid;
     padding:30px;
     min-width: max-content;
@@ -65,7 +82,11 @@ h3{
 }
 
 /* FOR the experience section */
-
+.experience, .education, .skill{
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+}
 .experience-header, .education-header, .skill-header{
     display: flex;
     gap:5px;
@@ -78,4 +99,20 @@ h3{
 .experience-header > h3, .education-header > h3, .skill-header > h3{
     display: flex;
     align-items: flex-end;
+}
+
+.experience > button, .education > button, .skill > button{
+    margin-left:-3px;
+    border-radius: 5px;
+    padding:5px;
+    border:0;
+    font-weight: bolder;
+    cursor: pointer;
+    align-self:flex-start;
+    opacity:0.5;
+    transition: opacity 0.2s ease-in-out;
+}
+
+button:hover{
+    opacity:1;
 }

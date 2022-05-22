@@ -6,6 +6,7 @@ class Education extends React.Component{
         super();
     }
 
+    
     render(){
         return (
             <div className="education">
@@ -13,6 +14,7 @@ class Education extends React.Component{
                     <EducationLogo alt="education" width="35" height="35" />
                     <h3>Education</h3>
                 </div>
+                <button>+ Education</button>
             </div>
         )
     }

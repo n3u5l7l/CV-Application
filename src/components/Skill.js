@@ -13,6 +13,7 @@ class Skill extends React.Component{
                     <SkillLogo alt="skill" width="35" height="35" />
                     <h3>Skill</h3>
                 </div>
+                <button>+ Skills</button>
             </div>
         )
     }
