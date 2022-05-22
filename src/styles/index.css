@@ -66,16 +66,16 @@ h3{
 
 /* FOR the experience section */
 
-.experience-header{
+.experience-header, .education-header{
     display: flex;
     gap:5px;
     margin-left:-3px;
     border-bottom: 1px solid;
 }
-.experience-header > svg{
+.experience-header > svg, .education-header > svg{
     background-color: black;
 }
-.experience-header > h3{
+.experience-header > h3, .education-header > h3{
     display: flex;
     align-items: flex-end;
 }
