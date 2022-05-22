@@ -1,6 +1,81 @@
+*{
+    box-sizing: border-box;
+}
 body{
     margin:0;
     padding:0;
     min-height: 100vh;
     height:1px;
+}
+#root{
+    padding-left: 150px; padding-right:150px;
+    padding-top: 15px;
+}
+.App{
+    border:1px solid;
+    padding:30px;
+    min-width: max-content;
+    display:flex;
+    flex-direction: column;
+    gap:15px;
+}
+/* For User INFO on the top */
+h2{
+    padding:0;
+    margin:0;
+    display:inline-block;
+}
+
+h3{
+    padding:0;
+    margin:0;
+}
+
+.info{
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+.name{
+    display:flex;
+    gap:10px;
+}
+
+.contacts{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, max-content);
+    gap:10px;
+}
+.phone-section, .linkedIn-section, .email-section, .twitter-section{
+    display: flex;
+    align-self:end;
+    gap:5px;
+
+}
+
+.linkedIn, .twitter, .email, .phoneNumber{
+    display: flex;
+    align-items: center;
+}
+
+.description{
+    margin-top:20px;
+}
+
+/* FOR the experience section */
+
+.experience-header{
+    display: flex;
+    gap:5px;
+    margin-left:-3px;
+    border-bottom: 1px solid;
+}
+.experience-header > svg{
+    background-color: black;
+}
+.experience-header > h3{
+    display: flex;
+    align-items: flex-end;
 }
