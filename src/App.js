@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import Info from "./components/Info";
 import Experience from "./components/Experience";
 import Education from "./components/Education";
+import Skill from "./components/Skill";
 
 class App extends Component{
   constructor(){
@@ -14,6 +15,7 @@ class App extends Component{
       <Info />
       <Experience />
       <Education />
+      <Skill />
     </div>
     );
   }
