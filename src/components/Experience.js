@@ -126,6 +126,7 @@ class Experience extends React.Component{
             Infos: this.state.Infos.filter(infos => !(infos.infoID === targetID)),
         })
     }
+
     render(){
         const addingMode = this.state.addingMode;
         let whatState;
@@ -161,23 +162,23 @@ function AddingState(props){
         <form className="experienceForm" method="post" onSubmit={props.handleSubmission}>
             <div>
                 <label htmlFor="company">Company Name</label>
-                <input type="text" id="company" value={props.tempInfo.company} onChange={props.handleCompanyChange} name="company"></input>
+                <input type="text" id="company" name="company" value={props.tempInfo.company} onChange={props.handleCompanyChange}></input>
             </div>
             <div>
                 <label htmlFor="role">Role</label>
-                <input type="text" value={props.tempInfo.role} onChange = {props.handleRoleChange} id="role" name="role"></input>
+                <input type="text" id="role" name="role" value={props.tempInfo.role} onChange = {props.handleRoleChange}></input>
             </div>
             <div className="stateField">
                 <label htmlFor="state">State</label>
-                <input type="text" id="state" value={props.tempInfo.state} onChange = {props.handleLocationChange} name="state"></input>
+                <input type="text" id="state" name="state" value={props.tempInfo.state} onChange = {props.handleLocationChange}></input>
             </div>
             <div>
                 <label htmlFor="dateFrom">From</label>
-                <input type="text" id="dateFrom" value={props.tempInfo.dateFrom} onChange={props.handleDateFromChange} name="dateFrom" placeholder="YYYY-MM"></input>
-            </div>
+                <input type="text" id="dateFrom" name="dateFrom" placeholder="YYYY-MM" value={props.tempInfo.dateFrom} onChange={props.handleDateFromChange}></input>
+            </div> 
             <div>
                 <label htmlFor="dateTo">To</label>
-                <input type="text" id="dateTo" value={props.tempInfo.dateTo} onChange={props.handleDateToChange} name="dateTo" placeholder="YYYY-MM or Present"></input>
+                <input type="text" id="dateTo" name="dateTo" placeholder="YYYY-MM or Present" value={props.tempInfo.dateTo} onChange={props.handleDateToChange}></input>
             </div>
             <div className="descriptionField">
                 <label htmlFor="description">Noteable description/achievements/experience</label>
