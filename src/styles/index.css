@@ -154,25 +154,25 @@ textarea{
 }
 
 /* FOr experienceOverviewJS */
-.experience-info-container{
+.experience-info-container, .education-info-container{
     display: flex;
     flex-direction: column;
     gap:30px;
 }
 
-.experience-info{
+.experience-info, .education-info{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: .4fr 1fr 0.2fr;
     gap:5px;
     width:600px;
     padding-left:5px;
     border-left:2px solid;
 }
 
-.experience-info > .date{
+.experience-info > .date, .education-info > .date{
     align-self:start;
 }
-.experience-info > .company{
+.experience-info > .company, .education-info > .university{
     font-size:20px;
 }
 .experience-info > .stateRole{
@@ -183,12 +183,12 @@ textarea{
     
 }
 
-.experience-info > ul {
+.experience-info > ul, .education-info > ul{
     grid-column-start: 2;
     grid-column-end: 4;
 }
 
-.experience-info > svg{
+.experience-info > svg, .education-info > svg{
     grid-column-start: 3;
     grid-column-end: 4;
     grid-row-start: 1;
@@ -198,6 +198,6 @@ textarea{
     transition: background-color 0.3s ease-in-out;
 }
 
-.experience-info > svg:hover{
+.experience-info > svg:hover, .education-info > svg:hover{
     background-color: rgba(130, 130, 130, 0.5);
 }
