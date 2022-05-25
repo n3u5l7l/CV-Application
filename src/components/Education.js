@@ -26,13 +26,82 @@ class Education extends React.Component{
         }
     }
 
+    addNewExperience = (e) =>{
+        this.setState({
+            addingMode: true,
+        })
+    }
+
+    addDescriptions = (e) =>{
+        if(e.keyCode !== 13){return;}
+        e.preventDefault();
+        
+        this.setState({
+            newInfo: {
+                ...this.state.newInfo,
+                descriptions: this.state.newInfo.descriptions.concat(this.state.newInfo.newDesc),
+                newDesc: {
+                    info:  "",
+                    id: uniqid(),
+                },
+            }
+        })
+    }
+
+    handleUniChange = (e) => {
+        this.setState({
+            newInfo: { 
+                ...this.state.newInfo,
+                university: e.target.value,
+            }
+        });
+    }
+
+    handleDegreeChange = (e) => {
+        this.setState({
+            newInfo: {
+                ...this.state.newInfo,
+                degree: e.target.value,
+            }
+        });
+    }
+
+    handleDateFromChange = (e) => {
+        this.setState({
+            newInfo: {
+                ...this.state.newInfo,
+                dateFrom: e.target.value,
+            }
+        })
+    }
+    handleDateToChange = (e) => {
+        this.setState({
+            newInfo: {
+                ...this.state.newInfo,
+                dateTo: e.target.value,
+            }
+        });
+    }
+
+    handleDescriptionChange = (e) => {
+        this.setState({
+            newInfo: {
+                ...this.state.newInfo,
+                newDesc: {
+                    info:  e.target.value,
+                    id: this.state.newInfo.newDesc.id,
+                },
+            }
+        });
+    }
+
     
     render(){
         const addingMode = this.state.addingMode;
         let whatState;
 
         if(addingMode){
-            whatState = <AddingState tempInfo = {this.state.newInfo} descriptions = {this.state.newInfo.descriptions} handleSubmission = {this.onSubmission} handleCompanyChange = {this.handleCompanyChange} handleRoleChange = {this.handleRoleChange} handleLocationChange = {this.handleLocationChange} handleDateFromChange = {this.handleDateFromChange} handleDateToChange = {this.handleDateToChange} handleDescriptionChange = {this.handleDescriptionChange} handleAdd={this.addDescriptions}/>;
+            whatState = <AddingState tempInfo = {this.state.newInfo} descriptions = {this.state.newInfo.descriptions} handleSubmission = {this.onSubmission} handleUniChange = {this.handleUniChange} handleDegreeChange = {this.handleDegreeChange} handleDateFromChange = {this.handleDateFromChange} handleDateToChange = {this.handleDateToChange} handleDescriptionChange = {this.handleDescriptionChange} handleAdd={this.addDescriptions}/>;
         }else{
             whatState = <DefaultState handleClick={this.addNewExperience}/>;
         }
@@ -63,11 +132,11 @@ function AddingState(props){
         <form className="educationForm" method="post" onSubmit={props.handleSubmission}>
             <div>
                 <label htmlFor="university">University</label>
-                <input type="text" id="university" name="university" value={props.tempInfo.company} onChange={props.handleCompanyChange}></input>
+                <input type="text" id="university" name="university" value={props.tempInfo.university} onChange={props.handleUniChange}></input>
             </div>
             <div>
                 <label htmlFor="degree">Degree</label>
-                <input type="text" id="degree" name="degree" value={props.tempInfo.role} onChange = {props.handleRoleChange}></input>
+                <input type="text" id="degree" name="degree" value={props.tempInfo.degree} onChange = {props.handleDegreeChange}></input>
             </div>
             <div>
                 <label htmlFor="dateFrom">From</label>
