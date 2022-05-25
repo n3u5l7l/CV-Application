@@ -14,11 +14,7 @@ class EducationOverview extends React.Component{
                     return (
                         <div className="education-info" key={infos.infoID}>
                             <h5 className="date">{infos.dateFrom} - {infos.dateTo}</h5>
-                            <strong className="role">{infos.role}</strong>
-                            <em className="stateRole">
-                                <div className="company">{infos.company},</div>
-                                <div className="state">{infos.state}</div>
-                            </em>
+                            <strong className="role">{infos.degree}, {infos.university}</strong>
                             <EducationOverviewDesc descriptions = {infos.descriptions} />
                             <TrashLogo alt="trash" onClick={ (e) => {this.props.handleRemove(e, infos.infoID)}}/>
                         </div>
