@@ -12,10 +12,18 @@ class App extends Component{
   render(){
     return (
     <div className="App">
-      <Info />
-      <Experience />
-      <Education />
-      <Skill />
+      <div className="title">
+        <h1>CV-Application</h1>
+        <div className="previewMode">
+          on off
+        </div>
+      </div>
+      <div className="AppContent">
+        <Info />
+        <Experience />
+        <Education />
+        <Skill />
+      </div>
     </div>
     );
   }

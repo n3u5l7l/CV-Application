@@ -8,13 +8,17 @@ body{
     height:1px;
 }
 #root{
-    padding: 15px 350px 0px 350px;
+    display:flex;
+    justify-content: center;
+    height:100%;
 }
 .App{
     min-width: max-content;
+    width:600px;
     display:flex;
     flex-direction: column;
     gap:15px;
+    align-items: center;
 }
 
 .title{
@@ -23,7 +27,7 @@ body{
     align-items: center;
 }
 
-h1{
+h1, h2, h3, h5, h6{
     padding:0;
     margin:0;
 }
@@ -35,18 +39,13 @@ h1{
     display:flex;
     flex-direction: column;
     gap:15px;
+    width:100%;
 }
 /* For User INFO on the top */
 h2{
-    padding:0;
-    margin:0;
     display:inline-block;
 }
 
-h3{
-    padding:0;
-    margin:0;
-}
 
 .info{
     display:flex;
@@ -86,6 +85,7 @@ h3{
     display:flex;
     flex-direction: column;
     gap:10px;
+    width:100%;
 }
 .experience-header, .education-header, .skill-header{
     display: flex;
@@ -100,9 +100,11 @@ h3{
     display: flex;
     align-items: flex-end;
 }
-
-.experience > button, .education > button, .skill > button{
+.experience-default-state{
     margin-left:-3px;
+}
+/* Why not have all just be buttons???? like the button:hover below, easier I think */
+button{
     border-radius: 5px;
     padding:5px;
     border:0;
@@ -113,6 +115,91 @@ h3{
     transition: opacity 0.2s ease-in-out;
 }
 
-button:hover{
+/* .experience-default-state > button, .education > button, .skill > button{*/
+ button:hover{
     opacity:1;
+}
+
+/* For the addingState style*/
+form{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: 1fr;
+    gap:10px;
+    min-width:100%;
+    max-width:500px;
+}
+
+ul{
+    margin:0;
+    padding-left:15px;
+    overflow-wrap: break-word;
+}
+
+form > div{
+    display:flex;
+    flex-direction: column;
+    overflow-wrap: break-word;
+}
+
+.stateField{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.descriptionField{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+textarea{
+    resize:none;
+}
+
+/* FOr experienceOverviewJS */
+.experience-info-container{
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+}
+
+.experience-info{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:5px;
+    width:600px;
+    padding-left:5px;
+    border-left:2px solid;
+}
+
+.experience-info > .date{
+    align-self:start;
+}
+.experience-info > .company{
+    font-size:20px;
+}
+.experience-info > .stateRole{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    display:flex;
+    gap:5px;
+    
+}
+
+.experience-info > ul {
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+.experience-info > svg{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    justify-self: end;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.experience-info > svg:hover{
+    background-color: rgba(130, 130, 130, 0.5);
 }
