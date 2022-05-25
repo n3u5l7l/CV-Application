@@ -115,7 +115,12 @@ class Education extends React.Component{
         })
     }
 
-    
+    deleteInfo = (e, targetID) => {
+        this.setState({
+            Infos: this.state.Infos.filter(infos => !(infos.infoID === targetID)),
+        })
+    }
+
     render(){
         const addingMode = this.state.addingMode;
         let whatState;
@@ -132,7 +137,7 @@ class Education extends React.Component{
                     <EducationLogo alt="education" width="35" height="35" />
                     <h3>Education</h3>
                 </div>
-                <EducationOverview allInfo = {this.state.Infos}/>
+                <EducationOverview allInfo = {this.state.Infos} handleRemove={this.deleteInfo}/>
                 {whatState}
             </div>
         )
