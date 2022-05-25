@@ -20,7 +20,20 @@ body{
     gap:15px;
     align-items: center;
 }
+button{
+    border-radius: 5px;
+    padding:5px;
+    border:0;
+    font-weight: bolder;
+    cursor: pointer;
+    align-self:flex-start;
+    opacity:0.5;
+    transition: opacity 0.2s ease-in-out;
+}
 
+button:hover{
+    opacity:1;
+}
 .title{
     display: flex;
     flex-direction: column;
@@ -103,22 +116,7 @@ h2{
 .experience-default-state{
     margin-left:-3px;
 }
-/* Why not have all just be buttons???? like the button:hover below, easier I think */
-button{
-    border-radius: 5px;
-    padding:5px;
-    border:0;
-    font-weight: bolder;
-    cursor: pointer;
-    align-self:flex-start;
-    opacity:0.5;
-    transition: opacity 0.2s ease-in-out;
-}
 
-/* .experience-default-state > button, .education > button, .skill > button{*/
- button:hover{
-    opacity:1;
-}
 
 /* For the addingState style*/
 form{

@@ -21,7 +21,6 @@ class ExperienceOverview extends React.Component{
                             </em>
                             <ExperienceOverviewDesc descriptions = {infos.descriptions} />
                             <TrashLogo alt="trash" onClick={ (e) => {this.props.handleRemove(e, infos.infoID)}}/>
-                            {/* <img src="" alt="del" onClick={ (e) => {this.props.handleRemove(e, infos.infoID)}}></img> */}
                         </div>
                     )
                 })}

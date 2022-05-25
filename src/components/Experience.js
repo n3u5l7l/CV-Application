@@ -45,17 +45,6 @@ class Experience extends React.Component{
                     info:  "",
                     id: uniqid(),
                 },
-                /* company: this.state.newInfo.company,
-                role: this.state.newInfo.role,
-                state: this.state.newInfo.state,
-                dateFrom: this.state.newInfo.dateFrom,
-                dateTo: this.state.newInfo.dateTo,
-                descriptions: this.state.newInfo.descriptions.concat(this.state.newInfo.newDesc),
-                newDesc: {
-                    info:  "",
-                    id: uniqid(),
-                },
-                infoID: this.state.newInfo.infoID, */
             }
         })
     }
@@ -67,17 +56,6 @@ class Experience extends React.Component{
                     info:  e.target.value,
                     id: this.state.newInfo.newDesc.id,
                 },
-                /* company: this.state.newInfo.company,
-                role: this.state.newInfo.role,
-                state: this.state.newInfo.state,
-                dateFrom: this.state.newInfo.dateFrom,
-                dateTo: this.state.newInfo.dateTo,
-                descriptions: this.state.newInfo.descriptions,
-                newDesc: {
-                    info:  e.target.value,
-                    id: this.state.newInfo.newDesc.id,
-                },
-                infoID: this.state.newInfo.infoID, */
             }
         });
     }
@@ -86,17 +64,6 @@ class Experience extends React.Component{
             newInfo: {
                 ...this.state.newInfo,
                 company: e.target.value,
-         /*        company: e.target.value,
-                role: this.state.newInfo.role,
-                state: this.state.newInfo.state,
-                dateFrom: this.state.newInfo.dateFrom,
-                dateTo: this.state.newInfo.dateTo,
-                descriptions: this.state.newInfo.descriptions,
-                newDesc: {
-                    info:  this.state.newInfo.newDesc.info,
-                    id: this.state.newInfo.newDesc.id,
-                },
-                infoID: this.state.newInfo.infoID, */
             }
         });
     }
@@ -105,17 +72,6 @@ class Experience extends React.Component{
             newInfo: {
                 ...this.state.newInfo,
                 role: e.target.value,
-                /* company: this.state.newInfo.company,
-                role: e.target.value,
-                state: this.state.newInfo.state,
-                dateFrom: this.state.newInfo.dateFrom,
-                dateTo: this.state.newInfo.dateTo,
-                descriptions: this.state.newInfo.descriptions,
-                newDesc: {
-                    info:  this.state.newInfo.newDesc.info,
-                    id: this.state.newInfo.newDesc.id,
-                },
-                infoID: this.state.newInfo.infoID, */
             }
         });
     }
@@ -124,17 +80,6 @@ class Experience extends React.Component{
             newInfo: {
                 ...this.state.newInfo,
                 state: e.target.value,
-        /*         company: this.state.newInfo.company,
-                role: this.state.newInfo.role,
-                state: e.target.value,
-                dateFrom: this.state.newInfo.dateFrom,
-                dateTo: this.state.newInfo.dateTo,
-                descriptions: this.state.newInfo.descriptions,
-                newDesc: {
-                    info:  this.state.newInfo.newDesc.info,
-                    id: this.state.newInfo.newDesc.id,
-                },
-                infoID: this.state.newInfo.infoID, */
             }
         });
     }
@@ -144,17 +89,6 @@ class Experience extends React.Component{
             newInfo: {
                 ...this.state.newInfo,
                 dateFrom: e.target.value,
-                /* company: this.state.newInfo.company,
-                role: this.state.newInfo.role,
-                state: this.state.newInfo.state,
-                dateFrom: e.target.value,
-                dateTo: this.state.newInfo.dateTo,
-                descriptions: this.state.newInfo.descriptions,
-                newDesc: {
-                    info:  this.state.newInfo.newDesc.info,
-                    id: this.state.newInfo.newDesc.id,
-                },
-                infoID: this.state.newInfo.infoID, */
             }
         })
     }
@@ -163,17 +97,6 @@ class Experience extends React.Component{
             newInfo: {
                 ...this.state.newInfo,
                 dateTo: e.target.value,
-              /*   company: this.state.newInfo.company,
-                role: this.state.newInfo.role,
-                state: this.state.newInfo.state,
-                dateFrom: this.state.newInfo.dateFrom,
-                dateTo: e.target.value,
-                descriptions: this.state.newInfo.descriptions,
-                newDesc: {
-                    info:  this.state.newInfo.newDesc.info,
-                    id: this.state.newInfo.newDesc.id,
-                },
-                infoID: this.state.newInfo.infoID, */
             }
         });
     }
