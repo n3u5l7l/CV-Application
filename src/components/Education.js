@@ -95,6 +95,26 @@ class Education extends React.Component{
         });
     }
 
+    onSubmission = (e) => {
+        e.preventDefault();
+        this.setState({
+            addingMode: false,
+            Infos: this.state.Infos.concat(this.state.newInfo),
+            newInfo: {
+                university: "",
+                degree: "",
+                dateFrom: "",
+                dateTo: "",
+                descriptions: [],
+                newDesc: {
+                    info: "",
+                    id: uniqid(),
+                },
+                infoID: uniqid(),
+            }
+        })
+    }
+
     
     render(){
         const addingMode = this.state.addingMode;
