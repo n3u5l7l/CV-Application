@@ -40,7 +40,7 @@ button:hover{
     align-items: center;
 }
 
-h1, h2, h3, h5, h6{
+h1, h2, h3, h4, h5, h6{
     padding:0;
     margin:0;
 }
@@ -200,4 +200,9 @@ textarea{
 
 .experience-info > svg:hover, .education-info > svg:hover{
     background-color: rgba(130, 130, 130, 0.5);
+}
+
+.skill-input-container{
+    grid-column-start:1;
+    grid-column-end: 3;
 }

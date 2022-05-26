@@ -1,5 +1,5 @@
 import React from "react";
-
+import {ReactComponent as TrashLogo} from "../assets/trash-can.svg";
 
 class SkillOverview extends React.Component{
     constructor(props){
@@ -11,7 +11,10 @@ class SkillOverview extends React.Component{
 
         return (<ul>
             {
-                skills.map((skill) => <li key={skill.id}>{skill.skill}</li>)
+                skills.map((skill) => <li key={skill.id}>
+                    <h4>{skill.skill}</h4>
+
+                </li>)
             }
         </ul>)
     }
