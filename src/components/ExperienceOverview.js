@@ -8,6 +8,7 @@ class ExperienceOverview extends React.Component{
 
     render(){
         const allInfo = this.props.allInfo;
+        const previewMode = this.props.previewMode;
         return (
          <div className="experience-info-container">
                 {allInfo.map((infos) => {
@@ -20,7 +21,7 @@ class ExperienceOverview extends React.Component{
                                 <div className="state">{infos.state}</div>
                             </em>
                             <ExperienceOverviewDesc descriptions = {infos.descriptions} />
-                            <TrashLogo alt="trash" onClick={ (e) => {this.props.handleRemove(e, infos.infoID)}}/>
+                            {previewMode !== "ON" ? <TrashLogo alt="trash" onClick={ (e) => {this.props.handleRemove(e, infos.infoID)}}/> : null}
                         </div>
                     )
                 })}

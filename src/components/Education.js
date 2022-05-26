@@ -125,7 +125,7 @@ class Education extends React.Component{
         const addingMode = this.state.addingMode;
         let whatState;
         if(this.props.previewMode === "ON"){
-            whatState = "";
+            whatState = null;
         }else{
             if(addingMode){
                 whatState = <AddingState tempInfo = {this.state.newInfo} descriptions = {this.state.newInfo.descriptions} handleSubmission = {this.onSubmission} handleUniChange = {this.handleUniChange} handleDegreeChange = {this.handleDegreeChange} handleDateFromChange = {this.handleDateFromChange} handleDateToChange = {this.handleDateToChange} handleDescriptionChange = {this.handleDescriptionChange} handleAdd={this.addDescriptions}/>;
@@ -140,7 +140,7 @@ class Education extends React.Component{
                     <EducationLogo alt="education" width="35" height="35" />
                     <h3>Education</h3>
                 </div>
-                <EducationOverview allInfo = {this.state.Infos} handleRemove={this.deleteInfo}/>
+                <EducationOverview previewMode = {this.props.previewMode} allInfo = {this.state.Infos} handleRemove={this.deleteInfo}/>
                 {whatState}
             </div>
         )

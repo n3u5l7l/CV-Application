@@ -53,7 +53,7 @@ class Skill extends React.Component{
         const addingMode = this.state.addingMode;
         let whatState;
         if(this.props.previewMode === "ON"){
-            whatState = "";
+            whatState = null;
         }else{
             if(addingMode){
                 whatState = <AddingState tempInfo = {this.state.newSkill} handleSubmission = {this.onSubmission} handleChange={this.handleChange}/>;
@@ -68,7 +68,7 @@ class Skill extends React.Component{
                     <SkillLogo alt="skill" width="35" height="35" />
                     <h3>Skill</h3>
                 </div>
-                <SkillOverview skills={this.state.skills} handleRemove = {this.handleRemove}/>
+                <SkillOverview previewMode = {this.props.previewMode} skills={this.state.skills} handleRemove = {this.handleRemove}/>
                 {whatState}
             </div>
         )

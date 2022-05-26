@@ -131,7 +131,7 @@ class Experience extends React.Component{
         const addingMode = this.state.addingMode;
         let whatState;
         if(this.props.previewMode === "ON"){
-            whatState = "";
+            whatState = null;
         }
         else{
             if(addingMode){
@@ -147,7 +147,7 @@ class Experience extends React.Component{
                     <ExperienceLogo alt="experience" width="35" height="35"/>
                     <h3>Experience</h3>
                 </div>
-                <ExperienceOverview allInfo = {this.state.Infos} handleRemove={this.deleteInfo}/>
+                <ExperienceOverview previewMode = {this.props.previewMode}  allInfo = {this.state.Infos} handleRemove={this.deleteInfo}/>
                 {whatState}
             </div>
         )

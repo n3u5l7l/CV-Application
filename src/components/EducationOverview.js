@@ -8,6 +8,7 @@ class EducationOverview extends React.Component{
 
     render(){
         const allInfo = this.props.allInfo;
+        const previewMode = this.props.previewMode;
         return (
          <div className="education-info-container">
                 {allInfo.map((infos) => {
@@ -16,7 +17,7 @@ class EducationOverview extends React.Component{
                             <h5 className="date">{infos.dateFrom} - {infos.dateTo}</h5>
                             <strong className="role">{infos.degree}, {infos.university}</strong>
                             <EducationOverviewDesc descriptions = {infos.descriptions} />
-                            <TrashLogo alt="trash" onClick={ (e) => {this.props.handleRemove(e, infos.infoID)}}/>
+                            {previewMode !== "ON" ? <TrashLogo alt="trash" onClick={ (e) => {this.props.handleRemove(e, infos.infoID)}}/> : null}
                         </div>
                     )
                 })}

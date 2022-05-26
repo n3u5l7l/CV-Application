@@ -8,12 +8,12 @@ class SkillOverview extends React.Component{
 
     render(){
         const skills = this.props.skills;
-
+        const previewMode = this.props.previewMode;
         return (<ul>
             {
                 skills.map((skill) => <li className="skill-container" key={skill.id}>
                     <h4>{skill.skill}</h4>
-                    <TrashLogo alt="trash" onClick={ (e) => {this.props.handleRemove(e, skill.id)}}/>
+                    {previewMode !== "ON" ? <TrashLogo alt="trash" onClick={ (e) => {this.props.handleRemove(e, skill.id)}}/> : null}
                 </li>)
             }
         </ul>)
