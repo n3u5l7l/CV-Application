@@ -1,8 +1,7 @@
 import React, {Component} from "react";
-import Info from "./components/Info";
-import Experience from "./components/Experience";
-import Education from "./components/Education";
-import Skill from "./components/Skill";
+import ReactToPrint from "react-to-print";
+import ComponentToPrint from "./components/ComponentToPrint";
+import {ReactComponent as PrintLogo} from "./assets/printer.svg";
 
 class App extends Component{
   constructor(){
@@ -27,6 +26,23 @@ class App extends Component{
 
   }
   render(){
+    let displayContent = null;
+  
+    /* if(this.state.previewMode === "ON"){
+      //printButton = <div className="print" onClick={(e) => {window.print()}}><PrintLogo/></div>
+      displayContent = (
+        <div className="previewContent">
+          <ReactToPrint trigger={ () => {
+            return <PrintLogo className="print"/>;
+          }}
+          content = {() => this.componentRef}
+          />
+          <ComponentToPrint previewMode = {this.state.previewMode} ref={el => (this.componentRef = el)} />
+        </div>
+      )
+    }else{
+      displayContent = <ComponentToPrint previewMode = {this.state.previewMode}/>
+    } */
     return (
     <div className="App">
       <div className="title">
@@ -35,12 +51,13 @@ class App extends Component{
           Preview {this.state.previewMode}
         </button>
       </div>
-      <div className="AppContent">
-        <Info previewMode = {this.state.previewMode}/>
-        <Experience previewMode = {this.state.previewMode}/>
-        <Education previewMode = {this.state.previewMode}/>
-        <Skill previewMode = {this.state.previewMode}/>
-      </div>
+      {/* {displayContent} */}
+      {this.state.previewMode === "ON" ? (<ReactToPrint trigger={ () => {
+            return <PrintLogo className="print"/>;
+          }}
+          content = {() => this.componentRef}
+          /> ): null}
+      <ComponentToPrint previewMode = {this.state.previewMode} ref={el => (this.componentRef = el)} />
     </div>
     );
   }
