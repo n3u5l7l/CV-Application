@@ -5,8 +5,8 @@ import EducationOverview from "./EducationOverview";
 import EducationOverviewDesc from "./EducationOverViewDesc";
 
 class Education extends React.Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
 
         this.state = {
             addingMode: false,
@@ -124,11 +124,14 @@ class Education extends React.Component{
     render(){
         const addingMode = this.state.addingMode;
         let whatState;
-
-        if(addingMode){
-            whatState = <AddingState tempInfo = {this.state.newInfo} descriptions = {this.state.newInfo.descriptions} handleSubmission = {this.onSubmission} handleUniChange = {this.handleUniChange} handleDegreeChange = {this.handleDegreeChange} handleDateFromChange = {this.handleDateFromChange} handleDateToChange = {this.handleDateToChange} handleDescriptionChange = {this.handleDescriptionChange} handleAdd={this.addDescriptions}/>;
+        if(this.props.previewMode === "ON"){
+            whatState = "";
         }else{
-            whatState = <DefaultState handleClick={this.addNewExperience}/>;
+            if(addingMode){
+                whatState = <AddingState tempInfo = {this.state.newInfo} descriptions = {this.state.newInfo.descriptions} handleSubmission = {this.onSubmission} handleUniChange = {this.handleUniChange} handleDegreeChange = {this.handleDegreeChange} handleDateFromChange = {this.handleDateFromChange} handleDateToChange = {this.handleDateToChange} handleDescriptionChange = {this.handleDescriptionChange} handleAdd={this.addDescriptions}/>;
+            }else{
+                whatState = <DefaultState handleClick={this.addNewExperience}/>;
+            }
         }
 
         return (

@@ -52,11 +52,14 @@ class Skill extends React.Component{
     render(){
         const addingMode = this.state.addingMode;
         let whatState;
-
-        if(addingMode){
-            whatState = <AddingState tempInfo = {this.state.newSkill} handleSubmission = {this.onSubmission} handleChange={this.handleChange}/>;
+        if(this.props.previewMode === "ON"){
+            whatState = "";
         }else{
-            whatState = <DefaultState handleClick={this.addNewSkill}/>;
+            if(addingMode){
+                whatState = <AddingState tempInfo = {this.state.newSkill} handleSubmission = {this.onSubmission} handleChange={this.handleChange}/>;
+            }else{
+                whatState = <DefaultState handleClick={this.addNewSkill}/>;
+            }
         }
 
         return (

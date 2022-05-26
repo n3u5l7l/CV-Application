@@ -5,8 +5,8 @@ import ExperienceOverviewDesc from "./ExperienceOverviewDesc";
 import uniqid from "uniqid";
 
 class Experience extends React.Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
 
         this.state = {
             addingMode: false,
@@ -130,12 +130,17 @@ class Experience extends React.Component{
     render(){
         const addingMode = this.state.addingMode;
         let whatState;
-
-        if(addingMode){
-            whatState = <AddingState tempInfo = {this.state.newInfo} descriptions = {this.state.newInfo.descriptions} handleSubmission = {this.onSubmission} handleCompanyChange = {this.handleCompanyChange} handleRoleChange = {this.handleRoleChange} handleLocationChange = {this.handleLocationChange} handleDateFromChange = {this.handleDateFromChange} handleDateToChange = {this.handleDateToChange} handleDescriptionChange = {this.handleDescriptionChange} handleAdd={this.addDescriptions}/>;
-        }else{
-            whatState = <DefaultState handleClick={this.addNewExperience}/>;
+        if(this.props.previewMode === "ON"){
+            whatState = "";
         }
+        else{
+            if(addingMode){
+                whatState = <AddingState tempInfo = {this.state.newInfo} descriptions = {this.state.newInfo.descriptions} handleSubmission = {this.onSubmission} handleCompanyChange = {this.handleCompanyChange} handleRoleChange = {this.handleRoleChange} handleLocationChange = {this.handleLocationChange} handleDateFromChange = {this.handleDateFromChange} handleDateToChange = {this.handleDateToChange} handleDescriptionChange = {this.handleDescriptionChange} handleAdd={this.addDescriptions}/>;
+            }else{
+                whatState = <DefaultState handleClick={this.addNewExperience}/>;
+            }
+        }
+
         return (
             <div className="experience">
                 <div className="experience-header">
