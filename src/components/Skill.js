@@ -31,9 +31,14 @@ class Skill extends React.Component{
         })
     }
 
+    handleRemove = (e, targetID) => {
+        this.setState({
+            skills: this.state.skills.filter(infos => !(infos.id === targetID)),
+        });
+    }
     onSubmission = (e) => {
         e.preventDefault();
-        
+
         this.setState({
             skills: this.state.skills.concat(this.state.newSkill),
             addingMode: false,
@@ -43,6 +48,7 @@ class Skill extends React.Component{
             }
         })
     }
+
     render(){
         const addingMode = this.state.addingMode;
         let whatState;
@@ -59,7 +65,7 @@ class Skill extends React.Component{
                     <SkillLogo alt="skill" width="35" height="35" />
                     <h3>Skill</h3>
                 </div>
-                <SkillOverview skills={this.state.skills} />
+                <SkillOverview skills={this.state.skills} handleRemove = {this.handleRemove}/>
                 {whatState}
             </div>
         )
