@@ -93,7 +93,7 @@ h2{
     margin-top:20px;
 }
 
-/* FOR the experience section */
+/* For the experience section */
 .experience, .education, .skill{
     display:flex;
     flex-direction: column;
@@ -153,7 +153,7 @@ textarea{
     resize:none;
 }
 
-/* FOr experienceOverviewJS */
+/* For experienceOverviewJS */
 .experience-info-container, .education-info-container{
     display: flex;
     flex-direction: column;
@@ -188,7 +188,7 @@ textarea{
     grid-column-end: 4;
 }
 
-.experience-info > svg, .education-info > svg{
+.experience-info > svg, .education-info > svg, .skill-container > svg{
     grid-column-start: 3;
     grid-column-end: 4;
     grid-row-start: 1;
@@ -198,11 +198,22 @@ textarea{
     transition: background-color 0.3s ease-in-out;
 }
 
-.experience-info > svg:hover, .education-info > svg:hover{
+.experience-info > svg:hover, .education-info > svg:hover, .skill-container > svg:hover{
     background-color: rgba(130, 130, 130, 0.5);
 }
 
+/* For SkillOverview section */
 .skill-input-container{
     grid-column-start:1;
     grid-column-end: 3;
 }
+
+.skill-container{
+    display: flex;
+    gap:5px;
+}
+
+.skill-container > h4{
+    align-self:center;
+}
+

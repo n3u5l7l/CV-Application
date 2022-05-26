@@ -11,9 +11,9 @@ class SkillOverview extends React.Component{
 
         return (<ul>
             {
-                skills.map((skill) => <li key={skill.id}>
+                skills.map((skill) => <li className="skill-container" key={skill.id}>
                     <h4>{skill.skill}</h4>
-
+                    <TrashLogo alt="trash" onClick={ (e) => {this.props.handleRemove(e, skill.id)}}/>
                 </li>)
             }
         </ul>)
