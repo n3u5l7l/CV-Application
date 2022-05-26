@@ -33,6 +33,12 @@ class Experience extends React.Component{
         })
     }
 
+    stopAddingExperience = (e) => {
+        this.setState({
+            addingMode: false,
+        })
+    }
+
     addDescriptions = (e) =>{
         if(e.keyCode !== 13){return;}
         e.preventDefault();
@@ -135,7 +141,7 @@ class Experience extends React.Component{
         }
         else{
             if(addingMode){
-                whatState = <AddingState tempInfo = {this.state.newInfo} descriptions = {this.state.newInfo.descriptions} handleSubmission = {this.onSubmission} handleCompanyChange = {this.handleCompanyChange} handleRoleChange = {this.handleRoleChange} handleLocationChange = {this.handleLocationChange} handleDateFromChange = {this.handleDateFromChange} handleDateToChange = {this.handleDateToChange} handleDescriptionChange = {this.handleDescriptionChange} handleAdd={this.addDescriptions}/>;
+                whatState = <AddingState tempInfo = {this.state.newInfo} descriptions = {this.state.newInfo.descriptions} handleSubmission = {this.onSubmission} handleCompanyChange = {this.handleCompanyChange} handleRoleChange = {this.handleRoleChange} handleLocationChange = {this.handleLocationChange} handleDateFromChange = {this.handleDateFromChange} handleDateToChange = {this.handleDateToChange} handleDescriptionChange = {this.handleDescriptionChange} handleAdd={this.addDescriptions} handleRemove={this.stopAddingExperience}/>;
             }else{
                 whatState = <DefaultState handleClick={this.addNewExperience}/>;
             }
@@ -191,7 +197,7 @@ function AddingState(props){
                 <textarea value={props.tempInfo.newDesc.info} id="description" name="description" onChange={props.handleDescriptionChange} onKeyDown={props.handleAdd}></textarea>
             </div>
             <button>Add</button>
-            <button>Cancel</button>
+            <button onClick={props.handleRemove}>Cancel</button>
         </form>
     );
 }

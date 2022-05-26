@@ -22,6 +22,13 @@ class Skill extends React.Component{
             addingMode: true,
         })
     }
+
+    stopAddingNewSkill = (e) => {
+        this.setState({
+            addingMode: false,
+        })
+    }
+
     handleChange = (e) => {
         this.setState({
             newSkill: {
@@ -56,7 +63,7 @@ class Skill extends React.Component{
             whatState = null;
         }else{
             if(addingMode){
-                whatState = <AddingState tempInfo = {this.state.newSkill} handleSubmission = {this.onSubmission} handleChange={this.handleChange}/>;
+                whatState = <AddingState tempInfo = {this.state.newSkill} handleSubmission = {this.onSubmission} handleChange={this.handleChange} handleRemove={this.stopAddingNewSkill}/>;
             }else{
                 whatState = <DefaultState handleClick={this.addNewSkill}/>;
             }
@@ -91,7 +98,7 @@ function AddingState(props){
                 <input type="text" id="skill" name="skill" value={props.tempInfo.skill} onChange={props.handleChange}></input>
             </div>
             <button>Add</button>
-            <button>Cancel</button>
+            <button onClick={props.handleRemove}>Cancel</button>
         </form>
     );
 }
