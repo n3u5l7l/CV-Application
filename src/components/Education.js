@@ -40,6 +40,10 @@ class Education extends React.Component{
 
     addDescriptions = (e) =>{
         if(e.keyCode !== 13){return;}
+        if(e.keyCode === 13 &&  !e.target.value){
+            e.preventDefault();
+            return;
+        }
         e.preventDefault();
         
         this.setState({

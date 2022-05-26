@@ -45,7 +45,7 @@ class Skill extends React.Component{
     }
     onSubmission = (e) => {
         e.preventDefault();
-
+        if(!this.state.newSkill.skill){return;}
         this.setState({
             skills: this.state.skills.concat(this.state.newSkill),
             addingMode: false,
