@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/cv-application/static/css/main.16823584.css",
+    "main.js": "/cv-application/static/js/main.c69ec881.js",
+    "static/media/twitter.svg": "/cv-application/static/media/twitter.2d02a4827d039b066833040bc4290eb8.svg",
+    "static/media/puzzle-star.svg": "/cv-application/static/media/puzzle-star.fd64b4229c13cc7328a5572ee89ae988.svg",
+    "index.html": "/cv-application/index.html",
+    "static/media/linkedin.svg": "/cv-application/static/media/linkedin.0075ae00b2d9e11dab57dc85610298cf.svg",
+    "static/media/briefcase-outline.svg": "/cv-application/static/media/briefcase-outline.5ee2ab3926289d0cc9763f740aee11e8.svg",
+    "static/media/phone.svg": "/cv-application/static/media/phone.56a26afafbbcae81845374341572ce04.svg",
+    "static/media/printer.svg": "/cv-application/static/media/printer.b64a62cbbe837794f84af454b1fe7eeb.svg",
+    "static/media/email.svg": "/cv-application/static/media/email.26b7d51f1a845d3183b2daccb0e69e74.svg",
+    "static/media/school.svg": "/cv-application/static/media/school.3e58b0bc0bbdfab88f8230898639f519.svg",
+    "static/media/trash-can.svg": "/cv-application/static/media/trash-can.89736e0d79edb5dd4c157ba570cd562b.svg",
+    "main.16823584.css.map": "/cv-application/static/css/main.16823584.css.map",
+    "main.c69ec881.js.map": "/cv-application/static/js/main.c69ec881.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.16823584.css",
+    "static/js/main.c69ec881.js"
+  ]
+}
