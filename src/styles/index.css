@@ -20,6 +20,9 @@ body{
     gap:15px;
     align-items: center;
 }
+button.previewMode{
+    align-self: center;
+}
 button{
     border-radius: 5px;
     padding:5px;
